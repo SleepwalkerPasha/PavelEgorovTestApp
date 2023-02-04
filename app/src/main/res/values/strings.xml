@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PopularFilms</string>
+    <string name="search_hint">Название фильма</string>
+    <string name="favorite">Избранные</string>
+    <string name="content_description_favorite">Список избранных фильмов</string>
+    <string name="search">Поиск</string>
+    <string name="content_description_search">Поиск фильмов по названию</string>
+</resources>
