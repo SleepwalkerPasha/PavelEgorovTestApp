@@ -1,6 +1,7 @@
-package ru.tinkoff.edu.popularfilms
+package ru.tinkoff.edu.popularfilms.ui
 
 import android.content.Context
+import ru.tinkoff.edu.popularfilms.R
 import ru.tinkoff.edu.popularfilms.api.KinopoiskAPIServices
 import ru.tinkoff.edu.popularfilms.api.okhttp.OkHttpClientCreator
 import ru.tinkoff.edu.popularfilms.api.retrofit.RetrofitClient

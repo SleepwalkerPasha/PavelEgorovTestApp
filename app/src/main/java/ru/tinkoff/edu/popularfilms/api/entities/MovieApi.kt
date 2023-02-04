@@ -5,13 +5,13 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class MoviePOJO(
+data class MovieApi(
     @SerialName("countries")
-    val countries: List<Country?>?,
+    val countries: List<Country>?,
     @SerialName("description")
     val description: String?,
     @SerialName("genres")
-    val genres: List<Genre?>?,
+    val genres: List<Genre>?,
     @SerialName("kinopoiskId")
     val kinopoiskId: Int?,
     @SerialName("nameRu")
@@ -21,8 +21,9 @@ data class MoviePOJO(
     @SerialName("posterUrlPreview")
     val posterUrlPreview: String?,
     @SerialName("year")
-    val year: Int?
+    val year: Int?,
 ) {
+
     @Serializable
     data class Country(
         @SerialName("country")

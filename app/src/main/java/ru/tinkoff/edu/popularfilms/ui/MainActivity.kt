@@ -1,8 +1,8 @@
-package ru.tinkoff.edu.popularfilms
+package ru.tinkoff.edu.popularfilms.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import ru.tinkoff.edu.popularfilms.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
