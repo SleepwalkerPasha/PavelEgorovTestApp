@@ -22,6 +22,7 @@ data class MovieApi(
     val posterUrlPreview: String?,
     @SerialName("year")
     val year: Int?,
+    val liked: Boolean,
 ) {
 
     @Serializable
