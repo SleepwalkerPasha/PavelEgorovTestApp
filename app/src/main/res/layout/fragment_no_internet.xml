@@ -27,15 +27,6 @@
             android:textColor="#0094FF"
             />
 
-        <Button
-            android:id="@+id/update_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:fontFamily="@font/roboto_medium"
-            android:background="@drawable/rounded_corner"
-            android:backgroundTint="@color/button_background_color"
-            android:text="@string/repeat_button"/>
 
     </LinearLayout>
 
