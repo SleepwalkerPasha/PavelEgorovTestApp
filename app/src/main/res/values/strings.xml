@@ -1,4 +1,5 @@
 <resources>
+    <string name="name">PavelEgorovTest</string>
     <string name="popular">Популярные</string>
     <string name="search_hint">Название фильма</string>
     <string name="favorite">Избранное</string>
@@ -6,4 +7,5 @@
     <string name="search">Поиск</string>
     <string name="content_description_search">Поиск фильмов по названию</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="content_description_img">Постер фильма</string>
 </resources>

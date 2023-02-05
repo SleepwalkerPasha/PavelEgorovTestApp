@@ -1,17 +1,16 @@
 package ru.tinkoff.edu.popularfilms.api.entities
 
-
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class MovieApi(
+data class SingleMovieApi(
     @SerialName("countries")
-    val countries: List<CountryApi>?,
+    val countries: List<MovieApi.CountryApi>?,
     @SerialName("genres")
-    val genres: List<GenreApi>?,
-    @SerialName("filmId")
-    val filmId: Int,
+    val genres: List<MovieApi.GenreApi>?,
+    @SerialName("kinopoiskId")
+    val kinopoiskId: Int,
     @SerialName("nameRu")
     val nameRu: String?,
     @SerialName("posterUrl")
@@ -20,16 +19,6 @@ data class MovieApi(
     val posterUrlPreview: String,
     @SerialName("year")
     val year: Int?,
-) {
-    @Serializable
-    data class CountryApi(
-        @SerialName("country")
-        val country: String
-    )
-
-    @Serializable
-    data class GenreApi(
-        @SerialName("genre")
-        val genre: String
-    )
-}
+    @SerialName("description")
+    val description: String?
+)

@@ -16,39 +16,51 @@
         android:padding="16dp">
 
         <ImageView
-            android:id="@+id/posterView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/poster_view"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/content_description_img"
+            />
 
         <TextView
-            android:id="@+id/nameView"
+            android:id="@+id/name_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/posterView"
+            app:layout_constraintStart_toEndOf="@+id/poster_view"
             app:layout_constraintTop_toTopOf="parent"
             android:fontFamily="@font/roboto_bold"
             android:text="@string/hello_blank_fragment"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/genreAndYearView"
+            android:id="@+id/genre_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/posterView"
-            app:layout_constraintTop_toBottomOf="@id/nameView"
+            app:layout_constraintStart_toEndOf="@id/poster_view"
+            app:layout_constraintTop_toBottomOf="@id/name_view"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/hello_blank_fragment" />
+
+        <TextView
+            android:id="@+id/yearView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/poster_view"
+            app:layout_constraintTop_toBottomOf="@id/genre_view"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/hello_blank_fragment" />
 
         <ImageView
-            android:id="@+id/favView"
+            android:id="@+id/fav_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/content_description_img"
             android:src="@drawable/ic_favorite_pressed_16" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

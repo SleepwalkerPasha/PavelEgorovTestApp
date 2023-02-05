@@ -1,19 +1,22 @@
 package ru.tinkoff.edu.popularfilms.ui.fragments.cards
 
-import android.net.Uri
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import ru.tinkoff.edu.popularfilms.api.entities.MovieApi
+import com.bumptech.glide.Glide
 import ru.tinkoff.edu.popularfilms.databinding.FragmentFilmCardBinding
+import ru.tinkoff.edu.popularfilms.ui.fragments.entities.Movie
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
-    var data: List<MovieApi> = emptyList()
-        set(newValue) {
-            field = newValue
-            notifyDataSetChanged()
-        }
+    private var movieList: List<Movie> = emptyList()
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setMovieList(movieList: List<Movie>) {
+        this.movieList = movieList
+        notifyDataSetChanged()
+    }
 
     class MovieViewHolder(val binding: FragmentFilmCardBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -22,18 +25,21 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
         return MovieViewHolder(FragmentFilmCardBinding.inflate(inflater, parent, false))
     }
 
-    override fun getItemCount(): Int = data.size
+    override fun getItemCount(): Int = movieList.size
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        val movie = data[position]
-        val context = holder.itemView.context
+        val movie = movieList[position]
+//        val context = holder.itemView.context
 
         with(holder.binding) {
 //            if (movie.liked)
 //                R.id.favView. = "visible"
-            posterView.setImageURI(Uri.parse(movie.posterUrlPreview))
+            Glide.with(posterView)
+                .load(movie.posterUrlPreview)
+                .into(posterView)
             nameView.text = movie.nameRu
-            genreAndYearView.text = movie.genres?.get(0)?.genre + " (" + movie.year +")"
+            genreView.text = movie.genres?.get(0)?.genre
+            yearView.text = movie.year.toString()
         }
     }
 }

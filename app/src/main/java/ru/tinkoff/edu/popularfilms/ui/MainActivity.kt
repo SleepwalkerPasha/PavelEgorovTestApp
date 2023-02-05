@@ -22,4 +22,5 @@ class MainActivity : AppCompatActivity() {
             .add(binding.mainScreenContainer.id, FilmFragment.newInstance())
             .commit()
     }
+
 }

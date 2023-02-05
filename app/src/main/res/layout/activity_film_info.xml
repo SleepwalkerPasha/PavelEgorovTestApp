@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_film_info_layout"
+    tools:context=".ui.FilmInfoActivity">
+
+
+    <ImageView
+        android:id="@+id/posterImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/text_layout"
+        app:layout_constraintTop_toTopOf="@id/activity_film_info_layout"
+        android:contentDescription="@string/content_description_img"
+        />
+
+    <LinearLayout
+        android:id="@+id/text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/activity_film_info_layout">
+
+        <TextView
+            android:id="@+id/titleView"
+            android:text="dfgdxfg"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/descriptionView"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="14sp"
+            android:text="zfgzdfgd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/genresView"
+            android:text="dfgdxfgxd"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/countiesView"
+            android:text="dgxdfgdfg"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,12 +12,19 @@ object RetrofitClient {
 
     private val contentType = "application/json".toMediaType()
 
+    private val json1 = Json {
+        ignoreUnknownKeys = true
+    }
+
+    @OptIn(ExperimentalSerializationApi::class)
+    private val json = json1.asConverterFactory(contentType)
+
     @OptIn(ExperimentalSerializationApi::class)
     fun getClient(baseUrl: String, okHttpClient: OkHttpClient): Retrofit {
         if (retrofit == null) {
             retrofit = Retrofit.Builder()
                 .baseUrl(baseUrl)
-                .addConverterFactory(Json.asConverterFactory(contentType))
+                .addConverterFactory(json)
                 .client(okHttpClient)
                 .build()
         }
