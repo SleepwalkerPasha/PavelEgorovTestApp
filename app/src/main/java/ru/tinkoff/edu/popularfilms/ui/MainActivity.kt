@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import ru.tinkoff.edu.popularfilms.databinding.ActivityMainBinding
@@ -13,15 +12,10 @@ import ru.tinkoff.edu.popularfilms.network.NetworkUtils
 import ru.tinkoff.edu.popularfilms.ui.fragments.FilmFragment
 import ru.tinkoff.edu.popularfilms.ui.fragments.NoInternetFragment
 import ru.tinkoff.edu.popularfilms.ui.fragments.SearchFragment
-import ru.tinkoff.edu.popularfilms.ui.viewmodel.NoInternetViewModel
 
 class MainActivity : AppCompatActivity() {
 
     private val networkUtil = NetworkUtils(this)
-
-    private val viewModel: NoInternetViewModel by viewModels()
-
-    private var buttonClicked = false
 
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -30,7 +24,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        setupObservers()
         loadData()
     }
 
@@ -53,14 +46,6 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(binding.mainScreenContainer.id, fragment, tag)
             .commit()
-    }
-
-    private fun setupObservers() {
-        viewModel.selectedCallback.observe(this) { item ->
-            if (item) {
-                buttonClicked = true
-            }
-        }
     }
 
     private fun checkForInet(fragmentInfo: Fragment, noInternetFragment: NoInternetFragment, tag:String) {
