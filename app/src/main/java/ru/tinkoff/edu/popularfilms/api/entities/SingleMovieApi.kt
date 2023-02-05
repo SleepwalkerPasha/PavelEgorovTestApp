@@ -5,20 +5,19 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class SingleMovieApi(
-    @SerialName("countries")
-    val countries: List<MovieApi.CountryApi>?,
-    @SerialName("genres")
-    val genres: List<MovieApi.GenreApi>?,
-    @SerialName("kinopoiskId")
-    val kinopoiskId: Int,
     @SerialName("nameRu")
     val nameRu: String?,
+    @SerialName("kinopoiskId")
+    val kinopoiskId: Int,
+    @SerialName("genres")
+    val genres: List<MovieApi.GenreApi>?,
+    @SerialName("countries")
+    val countries: List<MovieApi.CountryApi>?,
     @SerialName("posterUrl")
     val posterUrl: String,
-    @SerialName("posterUrlPreview")
-    val posterUrlPreview: String,
+    @SerialName("description")
+    val description: String?,
     @SerialName("year")
     val year: Int?,
-    @SerialName("description")
-    val description: String?
+    var liked: Boolean = false,
 )

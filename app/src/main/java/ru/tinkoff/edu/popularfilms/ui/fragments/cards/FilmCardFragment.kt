@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.tinkoff.edu.popularfilms.databinding.FragmentFilmCardBinding
-import ru.tinkoff.edu.popularfilms.ui.fragments.FilmFragment
+
 
 /**
  * A simple [Fragment] subclass.
@@ -23,8 +23,8 @@ class FilmCardFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance(): FilmFragment {
-            return FilmFragment()
+        fun newInstance(): FilmCardFragment {
+            return FilmCardFragment()
         }
     }
 }

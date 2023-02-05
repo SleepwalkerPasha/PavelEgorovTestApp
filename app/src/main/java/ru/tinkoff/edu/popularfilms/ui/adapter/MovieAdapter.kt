@@ -1,14 +1,16 @@
-package ru.tinkoff.edu.popularfilms.ui.fragments.cards
+package ru.tinkoff.edu.popularfilms.ui.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ru.tinkoff.edu.popularfilms.databinding.FragmentFilmCardBinding
-import ru.tinkoff.edu.popularfilms.ui.fragments.entities.Movie
+import ru.tinkoff.edu.popularfilms.ui.entities.Movie
 
-class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+class MovieAdapter(private val onMovieClick: (Movie) -> Unit, private val onMovieLongClick: (Movie) -> Unit) :
+    RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     private var movieList: List<Movie> = emptyList()
 
@@ -29,11 +31,18 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val movie = movieList[position]
-//        val context = holder.itemView.context
 
         with(holder.binding) {
-//            if (movie.liked)
-//                R.id.favView. = "visible"
+            root.setOnClickListener {
+                onMovieClick(movie)
+            }
+            root.setOnLongClickListener {
+                onMovieLongClick(movie)
+                true
+            }
+
+            if (movie.liked)
+                favView.visibility = View.VISIBLE
             Glide.with(posterView)
                 .load(movie.posterUrlPreview)
                 .into(posterView)

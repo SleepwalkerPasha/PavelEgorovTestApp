@@ -8,4 +8,9 @@
     <string name="content_description_search">Поиск фильмов по названию</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="content_description_img">Постер фильма</string>
+    <string name="repeat_button">Повторить</string>
+    <string name="search_text_field">Введите название фильма</string>
+    <string name="no_internet_connection">Произошла ошибка при загрузке данных, проверьте подключение к сети</string>
+    <string name="country">Страны:</string>
+    <string name="genre">Жанры:</string>
 </resources>

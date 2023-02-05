@@ -19,7 +19,6 @@ object RetrofitClient {
     @OptIn(ExperimentalSerializationApi::class)
     private val json = json1.asConverterFactory(contentType)
 
-    @OptIn(ExperimentalSerializationApi::class)
     fun getClient(baseUrl: String, okHttpClient: OkHttpClient): Retrofit {
         if (retrofit == null) {
             retrofit = Retrofit.Builder()

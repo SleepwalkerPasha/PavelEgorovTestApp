@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.tinkoff.edu.popularfilms.databinding.FragmentFilmBinding
-import ru.tinkoff.edu.popularfilms.ui.fragments.cards.MovieAdapter
-import ru.tinkoff.edu.popularfilms.viewmodel.MovieViewModel
+import ru.tinkoff.edu.popularfilms.ui.FilmInfoActivity
+import ru.tinkoff.edu.popularfilms.ui.adapter.MovieAdapter
+import ru.tinkoff.edu.popularfilms.ui.entities.Movie
+import ru.tinkoff.edu.popularfilms.ui.viewmodel.MovieViewModel
 
 class FilmFragment : Fragment() {
 
@@ -17,7 +19,16 @@ class FilmFragment : Fragment() {
 
     private val viewModel: MovieViewModel by viewModels()
 
-    private val movieAdapter = MovieAdapter()
+    private val movieAdapter = MovieAdapter(this::onMovieClick, this::onMovieLongClick)
+
+    private fun onMovieClick(movie: Movie) {
+        val intent = FilmInfoActivity.createIntent(requireActivity(), movie.filmId)
+        startActivity(intent)
+    }
+
+    private fun onMovieLongClick(movie: Movie) {
+        movie.liked = true
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentFilmBinding.inflate(inflater, container, false)

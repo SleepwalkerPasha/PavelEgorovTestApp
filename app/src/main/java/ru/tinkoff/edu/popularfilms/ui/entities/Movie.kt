@@ -1,4 +1,4 @@
-package ru.tinkoff.edu.popularfilms.ui.fragments.entities
+package ru.tinkoff.edu.popularfilms.ui.entities
 
 data class Movie(
     val nameRu: String?,
@@ -8,7 +8,7 @@ data class Movie(
     val posterUrl: String,
     val posterUrlPreview: String,
     val year: Int?,
-    val liked: Boolean = false,
+    var liked: Boolean = false,
 )
 
 data class Country(val country: String)

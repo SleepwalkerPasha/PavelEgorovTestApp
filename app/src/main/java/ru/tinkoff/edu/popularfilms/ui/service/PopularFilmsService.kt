@@ -1,4 +1,4 @@
-package ru.tinkoff.edu.popularfilms.ui
+package ru.tinkoff.edu.popularfilms.ui.service
 
 import ru.tinkoff.edu.popularfilms.api.KinopoiskAPIServices
 import ru.tinkoff.edu.popularfilms.api.okhttp.OkHttpClientCreator

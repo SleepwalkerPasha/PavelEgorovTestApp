@@ -1,9 +1,11 @@
 package ru.tinkoff.edu.popularfilms.converter
 
 import ru.tinkoff.edu.popularfilms.api.entities.MovieApi
-import ru.tinkoff.edu.popularfilms.ui.fragments.entities.Country
-import ru.tinkoff.edu.popularfilms.ui.fragments.entities.Genre
-import ru.tinkoff.edu.popularfilms.ui.fragments.entities.Movie
+import ru.tinkoff.edu.popularfilms.api.entities.SingleMovieApi
+import ru.tinkoff.edu.popularfilms.ui.entities.Country
+import ru.tinkoff.edu.popularfilms.ui.entities.Genre
+import ru.tinkoff.edu.popularfilms.ui.entities.Movie
+import ru.tinkoff.edu.popularfilms.ui.entities.SingleMovie
 
 class MovieConverter {
     fun convert(movieApi: MovieApi): Movie {
@@ -15,6 +17,18 @@ class MovieConverter {
             posterUrl = movieApi.posterUrl,
             posterUrlPreview = movieApi.posterUrlPreview,
             year = movieApi.year,
+        )
+    }
+
+    fun convertSingleMovie(singleMovieApi: SingleMovieApi): SingleMovie {
+        return SingleMovie(
+            nameRu = singleMovieApi.nameRu,
+            kinopoiskId = singleMovieApi.kinopoiskId,
+            genres = singleMovieApi.genres?.map(this::convertGenre),
+            countries = singleMovieApi.countries?.map(this::convertCountry),
+            posterUrl = singleMovieApi.posterUrl,
+            description = singleMovieApi.description,
+            year = singleMovieApi.year,
         )
     }
 
